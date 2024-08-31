@@ -10,7 +10,7 @@ const Card = ({ country }) => {
   };
 
   return (
-    <div onClick={handleClick} className="border p-4 rounded shadow cursor-pointer hover:shadow-lg transition-shadow duration-300">
+    <div onClick={handleClick} className="border p-4 rounded shadow cursor-pointer bg-slate-50 hover:shadow-lg transition-shadow duration-300">
       <h2 className="text-xl font-bold">{country.name.common}</h2>
       <p>Capital: {country.capital}</p>
       <p>Region: {country.region}</p>

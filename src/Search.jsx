@@ -141,7 +141,7 @@ const Search = () => {
       <Menu />
       <div className="container mx-auto p-4">
         <div className="flex flex-col lg:flex-row">
-          <div className="lg:w-1/4 w-full p-4 bg-white rounded shadow-lg">
+          <div className="lg:w-1/4 w-full p-4 bg-slate-50 rounded shadow-lg">
             <div>
               <h2 className="font-bold mb-2">Regions</h2>
               {loading ? (

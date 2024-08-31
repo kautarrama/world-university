@@ -53,7 +53,7 @@ const Detail = () => {
           <i className="fa-solid fa-arrow-left mr-2"></i>
           Back to Explore
         </button>
-        <div className="p-6 rounded-lg shadow-lg w-full max-w-2xl bg-white">
+        <div className="p-6 rounded-lg shadow-lg w-full max-w-2xl bg-slate-50">
           {loading ? (
             <div>
               <Skeleton height={40} width={300} />

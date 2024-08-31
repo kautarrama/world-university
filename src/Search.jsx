@@ -207,13 +207,15 @@ const Search = () => {
                 <span>Independent</span>
               </label>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {loading ? (
-                [...Array(countriesPerPage)].map((_, index) => (
+            {loading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[...Array(countriesPerPage)].map((_, index) => (
                   <Skeleton key={index} height={200} />
-                ))
-              ) : (
-                currentCountries.map(country => (
+                ))}
+              </div>
+            ) : currentCountries.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {currentCountries.map(country => (
                   <Card 
                     key={country.cca3} 
                     country={{
@@ -221,9 +223,14 @@ const Search = () => {
                       capital: Array.isArray(country.capital) ? country.capital.join(', ') : country.capital
                     }} 
                   />
-                ))
-              )}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center">
+                <h2 className="text-xl font-semibold mb-4">No Countries Found</h2>
+                <p className="text-lg">No countries match your search criteria. Try adjusting your filters or search term.</p>
+              </div>
+            )}
             <div className="flex justify-center mt-4 space-x-2">
               {!loading && renderPagination()}
             </div>
